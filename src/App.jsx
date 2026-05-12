@@ -30,40 +30,53 @@ export default function App() {
     <div className="min-h-screen bg-gray-100">
 
       {/* HERO SECTION */}
-      <section className="bg-black text-white py-24 px-6 text-center">
+      <section className="bg-black text-white py-10 md:py-14 px-6">
 
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
-          GOBIZ SHOE COLLECTION
-        </h1>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-          Our main website is under modification and will be coming back better
-          soon. Meanwhile, you can still place your orders directly with us.
-        </p>
+          {/* LEFT */}
+          <div>
 
-        <div className="bg-white/10 max-w-xl mx-auto rounded-3xl p-8 border border-white/20">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+              GOBIZ SHOE COLLECTION
+            </h1>
 
-          <h2 className="text-2xl font-bold mb-4">
-            Orders & Inquiries
-          </h2>
+            <p className="text-gray-300 text-lg md:text-xl max-w-xl">
+              Premium sneakers, streetwear and casual shoes available for direct order.
+            </p>
 
-          <a
-            href="tel:0741404204"
-            className="text-4xl font-extrabold hover:text-yellow-400 transition"
-          >
-            0741404204
-          </a>
+          </div>
 
-          <p className="mt-4 text-gray-300">
-            Call or WhatsApp us anytime.
-          </p>
+          {/* RIGHT */}
+          <div className="flex flex-col sm:flex-row gap-4">
+
+            <a
+              href="https://wa.me/254741404204"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-gray-200 transition text-center"
+            >
+              Order on WhatsApp
+            </a>
+
+            <a
+              href="#collection"
+              className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-black transition text-center"
+            >
+              View Collection
+            </a>
+
+          </div>
 
         </div>
 
       </section>
 
       {/* COLLECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section
+        id="collection"
+        className="max-w-7xl mx-auto px-6 py-20"
+      >
 
         <div className="text-center mb-16">
 
