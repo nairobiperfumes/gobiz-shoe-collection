@@ -3,7 +3,7 @@ export default function App() {
     {
       id: 1,
       name: "Nike Air Max",
-      price: "KSh 4,500",
+      price: "KSh 4,000",
       availability: "Available",
       image:
         "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
@@ -11,7 +11,7 @@ export default function App() {
     {
       id: 2,
       name: "Adidas Street",
-      price: "KSh 5,000",
+      price: "KSh 4,500",
       availability: "Available",
       image:
         "https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop",
@@ -19,12 +19,203 @@ export default function App() {
     {
       id: 3,
       name: "Jordan Retro",
-      price: "KSh 6,500",
+      price: "KSh 4,600",
       availability: "Limited Stock",
       image:
         "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop",
     },
-  ];
+
+    {
+  id: 4,
+  name: "Double Monk Casuals",
+  price: "KSh 4,800",
+  availability: "Available",
+  image: "double-monk-casuals1.jpg",
+  images: [
+    "/images/double-monk-casuals1.jpg",
+    "/images/double-monk-casuals2.jpg",
+    "/images/double-monk-casuals3.jpg",
+    "/images/double-monk-casuals4.jpg",
+  ],
+},
+
+  { 
+  id: 5,
+  name: "Nike Shox",
+  price: "KSh 4,500",
+  availability: "Available",
+  image: "nike-shox1.jpg",
+  gallery: [
+    "nike-shox2.jpg",
+    "nike-shox3.jpg",
+    "nike-shox4.jpg",
+    "nike-shox5.jpg",
+    "nike-shox6.jpg",
+    "nike-shox7.jpg",
+  ],
+
+},
+
+{
+  id: 7,
+  name: "Nike Airzoom",
+  price: "KSh 3,000",
+  availability: "Available",
+  image: "nike-airzoom1.jpg",
+  gallery: [
+    "nike-airzoom2.jpg",
+    "nike-airzoom3.jpg",
+    "nike-airzoom4.jpg",
+    "nike-airzoom5.jpg",
+    "nike-airzoom6.jpg",
+    "nike-airzoom7.jpg",
+    "nike-airzoom8.jpg",
+  ],
+},
+  {
+  id: 8,
+  name: "Double view monk cofee",
+  price: "KSh 4,500",
+  availability: "Available",
+  image: "double-monk-cofee.jpg",
+  gallery: [
+    "double-monk-cofee.jpg"
+  ],
+
+},
+
+{
+  id: 6,
+  name: "Nike Portal",
+  price: "KSh 4,600",
+  availability: "Available",
+  image: "nike-portal1.jpg",
+  gallery: [
+    "nike-portal2.jpg",
+    "nike-portal3.jpg",
+    "nike-portal4.jpg",
+    "nike-portal5.jpg",
+    "nike-portal6.jpg",
+  ],
+
+},
+{
+  id: 9,
+  name: "Polo Casual black",
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "polo-casuals.jpg",
+  gallery: [
+    "polo-casuals.jpg",
+    
+  ],
+},
+{
+  id: 10,
+  name: "Polo Casual white",
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "polo-casuals-white.jpg",
+  gallery: [
+    "polo-casuals-white.jpg",
+    
+  ],
+},
+{
+  id: 11,
+  name: "MK Ladies sneakers white",
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "MK-ladies-white.jpg",
+  gallery: [
+    "MK-ladies-white.jpg",
+    
+  ],
+},
+{
+  id: 12,
+  name: "MK Ladies sneakers blacck", 
+  availability: "Available",
+  image: "MK-ladies-black.jpg",
+  gallery: [
+    "MK-ladies-black.jpg",
+    
+  ],
+},
+{
+  id: 13,
+  name: "MK Ladies sneakers pink",
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "MK-ladies-pink.jpg",
+  gallery: [
+    "MK-ladies-pink.jpg",
+    
+  ],
+},
+{
+  id: 14,
+  name: "MK Ladies sneakers brown",
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "MK-ladies-brown.jpg",
+  gallery: [
+    "MK-ladies-brown.jpg",
+    
+  ],
+},
+{
+  id: 15,
+  name: "Double view monk black",
+  price: "KSh 4,500",
+  availability: "Available",
+  image: "double-monk-black.jpg",
+  gallery: [
+    "double-monk-black.jpg"
+  ],
+
+},
+{
+  id: 19,
+  name: "Adidas campus black",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "Adidas-campus-black.jpg",
+  gallery: [
+    "Adidas-campus-black.jpg"
+  ],
+},
+{
+  id: 16,
+  name: "Adidas campus pink",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "Adidas-campus-pink.jpg",
+  gallery: [
+    "Adidas-campus-pink.jpg"
+  ],
+},
+{
+  id: 17,
+  name: "Adidas campus white",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "Adidas-campus-white.jpg",
+  gallery: [
+    "Adidas-campus-white.jpg"
+  ],
+},
+{
+  id: 18,
+  name: "Adidas campus grey",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "Adidas-campus-grey.jpg",
+  gallery: [ 
+    "Adidas-campus-grey.jpg"
+  ],
+}
+];
 
   return (
     <div className="min-h-screen bg-gray-100">
