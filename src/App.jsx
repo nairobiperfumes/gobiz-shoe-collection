@@ -1152,156 +1152,173 @@ export default function App() {
 
   ];
 
-  const [search, setSearch] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("All");
-  const [selectedGender, setSelectedGender] = useState("All");
-  const [selectedImage, setSelectedImage] = useState(null);
+ const [search, setSearch] = useState("");
+const [selectedBrand, setSelectedBrand] = useState("All");
+const [selectedGender, setSelectedGender] = useState("All");
+const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredShoes = shoes.filter((shoe) => {
-    const matchesSearch = shoe.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+const filteredShoes = shoes.filter((shoe) => {
+  const matchesSearch = shoe.name
+    .toLowerCase()
+    .includes(search.toLowerCase());
 
-    const matchesBrand =
-      selectedBrand === "All" || shoe.brand === selectedBrand;
+  const matchesBrand =
+    selectedBrand === "All" || shoe.brand === selectedBrand;
 
-    const matchesGender =
-      selectedGender === "All" || shoe.gender === selectedGender;
+  const matchesGender =
+    selectedGender === "All" || shoe.gender === selectedGender;
 
-    return matchesSearch && matchesBrand && matchesGender;
-  });
+  return matchesSearch && matchesBrand && matchesGender;
+});
 
-  return (
-    <div className="min-h-screen bg-gray-100">
+return (
+  <div className="min-h-screen bg-gray-100">
 
-      {/* IMAGE MODAL */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img
-            src={selectedImage}
-            alt="Zoomed Shoe"
-            className="max-h-[90vh] max-w-[90vw] rounded-2xl"
-          />
-        </div>
-      )}
-
-      {/* HERO */}
-      <section className="bg-black text-white py-10 md:py-14 px-6">
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-
-          {/* LEFT */}
-          <div>
-
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-              GOBIZ SHOE COLLECTION
-            </h1>
-
-            <p className="text-gray-300 text-lg md:text-xl max-w-xl">
-              Premium sneakers, streetwear and casual shoes available for direct order.
-            </p>
-
-          </div>
-
-          {/* RIGHT */}
-          <div className="flex flex-col sm:flex-row gap-4">
-
-            <a
-              href="https://wa.me/254741404204"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-gray-200 transition text-center"
-            >
-              Order on WhatsApp
-            </a>
-
-            <a
-              href="#collection"
-              className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-black transition text-center"
-            >
-              View Collection
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* FILTERS */}
-      <section className="bg-white shadow-sm sticky top-0 z-40">
-
-        <div className="max-w-7xl mx-auto px-6 py-5">
-
-          <div className="flex flex-col lg:flex-row gap-4 items-center">
-
-            {/* SEARCH */}
-            <input
-              type="text"
-              placeholder="Search shoes..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full lg:flex-1 border border-gray-300 rounded-2xl px-5 py-3 outline-none focus:ring-2 focus:ring-black"
-            />
-
-            {/* GENDER */}
-            <select
-              value={selectedGender}
-              onChange={(e) => setSelectedGender(e.target.value)}
-              className="border border-gray-300 rounded-2xl px-5 py-3 bg-white"
-            >
-              <option>All</option>
-              <option>Men</option>
-              <option>Women</option>
-              <option>Unisex</option>
-            </select>
-
-            {/* BRAND */}
-            <select
-              value={selectedBrand}
-              onChange={(e) => setSelectedBrand(e.target.value)}
-              className="border border-gray-300 rounded-2xl px-5 py-3 bg-white"
-            >
-              <option>All</option>
-              <option>Nike</option>
-              <option>Adidas</option>
-              <option>Puma</option>
-              <option>Others</option>
-            </select>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* COLLECTION */}
-      <section
-        id="collection"
-        className="max-w-7xl mx-auto px-6 py-16"
+    {/* IMAGE MODAL */}
+    {selectedImage && (
+      <div
+        className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+        onClick={() => setSelectedImage(null)}
       >
+        <img
+          src={selectedImage}
+          alt="Zoomed Shoe"
+          className="max-h-[90vh] max-w-[90vw] rounded-2xl"
+        />
+      </div>
+    )}
 
-        <div className="text-center mb-14">
+    {/* HERO */}
+    <section className="bg-black text-white py-10 md:py-14 px-6">
 
-          <h2 className="text-5xl font-bold mb-4">
-            Our Collection
-          </h2>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
 
-          <p className="text-gray-600 text-lg">
-            Browse our available shoe collection.
+        {/* LEFT */}
+        <div>
+
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+            GOBIZ SHOE COLLECTION
+          </h1>
+
+          <p className="text-gray-300 text-lg md:text-xl max-w-xl">
+            Premium sneakers, streetwear and casual shoes available for direct order.
           </p>
 
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* RIGHT */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 
-          {filteredShoes.map((shoe) => (
+          <a
+            href="https://wa.me/254741404204"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-gray-200 transition text-center"
+          >
+            Order on WhatsApp
+          </a>
+
+          <a
+            href="#collection"
+            className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-black transition text-center"
+          >
+            View Collection
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    {/* FILTERS */}
+    <section className="bg-white shadow-sm sticky top-0 z-40">
+
+      <div className="max-w-7xl mx-auto px-4 py-4">
+
+        {/* MOBILE HORIZONTAL FILTERS */}
+        <div className="flex overflow-x-auto gap-3 whitespace-nowrap pb-2">
+
+          {/* SEARCH */}
+          <input
+            type="text"
+            placeholder="Search shoes..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="min-w-[220px] border border-gray-300 rounded-2xl px-5 py-3 outline-none focus:ring-2 focus:ring-black"
+          />
+
+          {/* GENDER */}
+          <select
+            value={selectedGender}
+            onChange={(e) => setSelectedGender(e.target.value)}
+            className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
+          >
+            <option>All</option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Unisex</option>
+          </select>
+
+          {/* BRAND */}
+          <select
+            value={selectedBrand}
+            onChange={(e) => setSelectedBrand(e.target.value)}
+            className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
+          >
+            <option>All</option>
+            <option>Nike</option>
+            <option>Adidas</option>
+            <option>Puma</option>
+            <option>New Balance</option>
+            <option>Converse</option>
+            <option>Asic</option>
+            <option>MK</option>
+            <option>Others</option>
+          </select>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    {/* COLLECTION */}
+    <section
+      id="collection"
+      className="max-w-7xl mx-auto px-4 py-14"
+    >
+
+      <div className="text-center mb-14">
+
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Our Collection
+        </h2>
+
+        <p className="text-gray-600 text-lg">
+          Browse our available shoe collection.
+        </p>
+
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {filteredShoes.map((shoe) => {
+
+          const whatsappMessage = `Hello, I would like to order:
+
+📦 Product: ${shoe.name}
+💰 Price: ${shoe.price}
+📍 Availability: ${shoe.availability}
+👤 Gender: ${shoe.gender}
+🏷️ Brand: ${shoe.brand}
+
+Please share more details.`;
+
+          return (
             <div
               key={shoe.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
             >
 
               {/* IMAGE */}
@@ -1319,61 +1336,80 @@ export default function App() {
               {/* DETAILS */}
               <div className="p-6">
 
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between gap-3 mb-2">
 
-                  <h3 className="text-2xl font-bold">
+                  <h3 className="text-xl font-bold line-clamp-2">
                     {shoe.name}
                   </h3>
 
-                  <span className="text-sm bg-gray-200 px-3 py-1 rounded-full">
+                  <span className="text-xs bg-gray-200 px-3 py-1 rounded-full whitespace-nowrap">
                     {shoe.brand}
                   </span>
 
                 </div>
 
-                <p className="text-gray-500 mb-3">
+                <p className="text-gray-500 mb-2">
                   {shoe.gender}
                 </p>
 
-                <p className="text-xl font-semibold mb-4">
+                <p className="text-2xl font-bold mb-4">
                   {shoe.price}
                 </p>
 
-                <span className="bg-black text-white px-4 py-2 rounded-full text-sm">
-                  {shoe.availability}
-                </span>
+                <div className="flex items-center justify-between gap-3">
 
-                <a
-                  href="https://wa.me/254741404204"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block mt-6 bg-black text-white text-center py-3 rounded-2xl font-semibold hover:bg-gray-800 transition"
+                  <span className="bg-black text-white px-4 py-2 rounded-full text-sm">
+                    {shoe.availability}
+                  </span>
+
+                </div>
+
+                {/* WHATSAPP BUTTON */}
+                <button
+                  onClick={() =>
+                    window.open(
+                      `https://wa.me/254741404204?text=${encodeURIComponent(
+                        whatsappMessage
+                      )}`,
+                      "_blank"
+                    )
+                  }
+                  className="w-full mt-6 bg-black text-white py-3 rounded-2xl font-semibold hover:bg-gray-800 transition"
                 >
-                  Order on WhatsApp
-                </a>
+                  Order via WhatsApp
+                </button>
 
               </div>
 
             </div>
-          ))}
+          );
+        })}
 
-        </div>
+      </div>
 
-      </section>
+    </section>
 
-      {/* FOOTER */}
-      <footer className="bg-black text-white text-center py-10 mt-10">
+    {/* FOOTER */}
+    <footer className="bg-black text-white text-center py-10 mt-10 px-6">
 
-        <h3 className="text-2xl font-bold mb-2">
-          GOBIZ SHOE COLLECTION
-        </h3>
+      <h3 className="text-2xl font-bold mb-2">
+        GOBIZ SHOE COLLECTION
+      </h3>
 
-        <p className="text-gray-400">
-          Premium sneakers and footwear collection.
-        </p>
+      <p className="text-gray-400 mb-2">
+        Premium sneakers and footwear collection.
+      </p>
 
-      </footer>
+      <p className="text-lg font-semibold">
+        0741404204
+      </p>
 
-    </div>
-  );
-}
+      <p className="text-gray-500 mt-2">
+        © Gobiz Limited 2026
+      </p>
+
+    </footer>
+
+  </div>
+);
+};
