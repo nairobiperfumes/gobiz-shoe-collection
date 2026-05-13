@@ -214,6 +214,35 @@ export default function App() {
   gallery: [ 
     "Adidas-campus-grey.jpg"
   ],
+},
+{
+  id: 19,
+  name: "Ladies wedges red",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "ladies-wedges-red.jpg",
+  gallery: [ 
+    "ladies-wedges-red.jpg"
+  ],
+},
+{
+  id: 19,
+  name: "Ladies wedges white",
+  availability: "Available",
+  image: "ladies-wedges-white.jpg",
+  gallery: [ 
+    "ladies-wedges-white.jpg"
+  ],
+},
+{
+  id: 19,
+  name: "Ladies wedges black",
+  price: "KSh 3,200",
+  availability: "Available",
+  image: "ladies-wedges-black.jpg",
+  gallery: [ 
+    "ladies-wedges-black.jpg"
+  ],
 }
 ];
 
