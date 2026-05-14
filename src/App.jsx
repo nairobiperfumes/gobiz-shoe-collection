@@ -1084,7 +1084,94 @@ export default function App() {
     "ladies-mule-3.jpg"
   ],
 },
+{
+  id: 102,
+  name: "Luxury mules 1",
+  brand: "Mules",
+  gender: ["Women", "Unisex", "Men"],
+  price: "KSh 3,800",
+  availability: "Available",
+  image: "luxury-mule-1.jpg",
+  gallery: [ 
+    "luxury-mule-1.jpg"
+  ],
+},
+{
+  id: 103,
+  name: "Luxury mules 2",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 3,800",
+  availability: "Available",
+  image: "luxury-mule-2.jpg",
+  gallery: [ 
+    "luxury-mule-2.jpg"
+  ],
+},
 
+{
+  id: 104,
+  name: "Luxury mules 3",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 3,800",
+  availability: "Available",
+  image: "luxury-mule-3.jpg",
+  gallery: [ 
+    "luxury-mule-3.jpg"
+  ],
+},
+
+{
+  id: 105,
+  name: "Adidas mules 1",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "adidas-mule-1.jpg",
+  gallery: [ 
+    "adidas-mule-1.jpg"
+  ],
+},
+
+{
+  id: 106,
+  name: "Adidas mules 2",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "adidas-mule-2.jpg",
+  gallery: [ 
+    "adidas-mule-2.jpg"
+  ],
+},
+
+{
+  id: 107,
+  name: "Adidas mules 3",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "adidas-mule-3.jpg",
+  gallery: [ 
+    "adidas-mule-3.jpg"
+  ],
+},
+{
+  id: 108,
+  name: "Adidas mules 4",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "adidas-mule-4.jpg",
+  gallery: [ 
+    "adidas-mule-4.jpg"
+  ],
+},
 {
   id: 75,
   name: "Orthopedic rubbers 1/4",
