@@ -1618,20 +1618,16 @@ Please share more details.`;
                 {/* SHARE + WHATSAPP BUTTONS */}
                 <div className="flex gap-3 mt-6">
 
+                  
                   {/* SHARE BUTTON */}
 <button
   onClick={async () => {
 
+    /* PRODUCT URL USING PRODUCT NAME */
+    const productSlug = encodeURIComponent(shoe.name);
+
     const productUrl =
-      `${window.location.origin}?product=${shoe.id}`;
-
-    const shareText = `Check out this shoe on GOBIZ:
-
-📦 ${shoe.name}
-💰 ${shoe.price}
-🏷️ ${shoe.brand}
-
-${productUrl}`;
+      `${window.location.origin}?product=${productSlug}`;
 
     try {
 
@@ -1639,13 +1635,17 @@ ${productUrl}`;
 
         await navigator.share({
           title: shoe.name,
-          text: shareText,
+          text: `Check out this shoe on GOBIZ:
+
+📦 ${shoe.name}
+💰 ${shoe.price}
+🏷️ ${shoe.brand}`,
           url: productUrl,
         });
 
       } else {
 
-        await navigator.clipboard.writeText(shareText);
+        await navigator.clipboard.writeText(productUrl);
 
         alert("Product link copied");
 
@@ -1662,7 +1662,6 @@ ${productUrl}`;
 >
   Share
 </button>
-
                   {/* WHATSAPP BUTTON */}
                   <button
                     onClick={() =>
