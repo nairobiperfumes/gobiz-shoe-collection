@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 export default function App() {
   const shoes = [
     {
@@ -1620,44 +1619,49 @@ Please share more details.`;
                 <div className="flex gap-3 mt-6">
 
                   {/* SHARE BUTTON */}
-                  <button
-                    onClick={() => {
+<button
+  onClick={async () => {
 
-                      /* PRODUCT SHARE LINK */
-                      const productUrl =
-                        `${window.location.origin}?product=${shoe.id}`;
+    const productUrl =
+      `${window.location.origin}?product=${shoe.id}`;
 
-                      const shareData = {
-                        title: shoe.name,
-                        text: `Check out this shoe on GOBIZ:
+    const shareText = `Check out this shoe on GOBIZ:
 
 📦 ${shoe.name}
 💰 ${shoe.price}
-🏷️ ${shoe.brand}`,
-                        url: productUrl,
-                      };
+🏷️ ${shoe.brand}
 
-                      if (navigator.share) {
+${productUrl}`;
 
-                        navigator.share(shareData);
+    try {
 
-                      } else {
+      if (navigator.share) {
 
-                        navigator.clipboard.writeText(
-`${shoe.name}
-${shoe.price}
-${productUrl}`
-                        );
+        await navigator.share({
+          title: shoe.name,
+          text: shareText,
+          url: productUrl,
+        });
 
-                        alert("Product link copied");
+      } else {
 
-                      }
+        await navigator.clipboard.writeText(shareText);
 
-                    }}
-                    className="flex-1 border border-black text-black py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
-                  >
-                    Share
-                  </button>
+        alert("Product link copied");
+
+      }
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+
+  }}
+  className="flex-1 border border-black text-black py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
+>
+  Share
+</button>
 
                   {/* WHATSAPP BUTTON */}
                   <button
