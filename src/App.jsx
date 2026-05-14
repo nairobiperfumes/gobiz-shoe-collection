@@ -1372,22 +1372,37 @@ useEffect(() => {
 
   const params = new URLSearchParams(window.location.search);
 
-  const productId = params.get("product");
+  const productName = params.get("product");
 
-  if (productId) {
+  if (productName) {
 
-    const element = document.getElementById(`product-${productId}`);
+    const decodedName = decodeURIComponent(productName);
 
-    if (element) {
+    const foundShoe = shoes.find(
+      (shoe) => shoe.name === decodedName
+    );
 
-      setTimeout(() => {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      }, 500);
+    if (foundShoe) {
+
+      const element = document.getElementById(
+        `product-${foundShoe.id}`
+      );
+
+      if (element) {
+
+        setTimeout(() => {
+
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+
+        }, 500);
+
+      }
 
     }
+
   }
 
 }, []);
