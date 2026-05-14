@@ -49,7 +49,41 @@ export default function App() {
   ],
 },
 
+{id: 90,
+  name: "Print Breathables 1",
+  brand: "Print",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "print-breathables1.jpg",
+  images: [
+    "print-breathables1.jpg",
+  ],
+},
+{id: 92,
+  name: "Print Breathables 2",
+  brand: "Print",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "print-breathables2.jpg",
+  images: [
+    "print-breathables2.jpg",
+  ],
+},
+{id: 93,
+  name: "Print Breathables 3",
+  brand: "Print",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 2,800",
+  availability: "Available",
+  image: "print-breathables3.jpg",
+  images: [
+    "print-breathables3.jpg",
+  ],
+},
   { 
+
   id: 5,
   name: "Nike Shox 1/7",
   brand: "Nike",
@@ -953,15 +987,101 @@ export default function App() {
   ],
 },
 {
-  id: 74,
-  name: "Official 17",
-  brand: "Official",
-  gender: "Men",
-  price: "KSh 4,200",
+  id: 94,
+  name: "Official Mule 1",
+  brand: "Mules",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 3,500",
   availability: "Available",
-  image: "official-17.jpg",
+  image: "official-mule-1.jpg",
   gallery: [ 
-    "official-17.jpg"
+    "official-mule-1.jpg"
+  ],
+},
+
+{
+  id: 95,
+  name: "Official mules 2",
+  brand: "Mules",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "official-mule-2.jpg",
+  gallery: [ 
+    "official-mule-2.jpg"
+  ],
+},
+{
+  id: 96,
+  name: "Official mules 3",
+  brand: "Mules",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "official-mule-3.jpg",
+  gallery: [ 
+    "official-mule-3.jpg"
+  ],
+},
+{
+  id: 97,
+  name: "Official mules 4",
+  brand: "Mules",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "official-mule-4.jpg",
+  gallery: [ 
+    "official-mule-4.jpg"
+  ],
+},
+{
+  id: 98,
+  name: "Official mules 5",
+  brand: "Mules",
+  gender: ["Men", "Women", "Unisex"],
+  price: "KSh 3,500",
+  availability: "Available",
+  image: "official-mule-5.jpg",
+  gallery: [ 
+    "official-mule-5.jpg"
+  ],
+},
+{
+  id: 99,
+  name: "Ladies mules 1",
+  brand: "Mules",
+  gender:  "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "ladies-mule-1.jpg",
+  gallery: [ 
+    "ladies-mule-1.jpg"
+  ],
+},
+{
+  id: 100,
+  name: "Ladies mules 2",
+  brand: "Mules",
+  gender:  "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "ladies-mule-2.jpg",
+  gallery: [ 
+    "ladies-mule-2.jpg"
+  ],
+},
+
+{
+  id: 101,
+  name: "Ladies mules 3",
+  brand: "Mules",
+  gender: "Women", 
+  price: "KSh 2,500",
+  availability: "Available",
+  image: "ladies-mule-3.jpg",
+  gallery: [ 
+    "ladies-mule-3.jpg"
   ],
 },
 
@@ -1155,8 +1275,8 @@ export default function App() {
   ];
 
  const [search, setSearch] = useState("");
-const [selectedBrand, setSelectedBrand] = useState("All");
-const [selectedGender, setSelectedGender] = useState("All");
+const [selectedBrand, setSelectedBrand] = useState("");
+const [selectedGender, setSelectedGender] = useState("");
 const [selectedImage, setSelectedImage] = useState(null);
 
 const filteredShoes = shoes.filter((shoe) => {
@@ -1164,11 +1284,15 @@ const filteredShoes = shoes.filter((shoe) => {
     .toLowerCase()
     .includes(search.toLowerCase());
 
+  // BRAND FILTER
   const matchesBrand =
-    selectedBrand === "All" || shoe.brand === selectedBrand;
+    selectedBrand === "" ||
+    shoe.brand === selectedBrand;
 
+  // GENDER FILTER
   const matchesGender =
-    selectedGender === "All" || shoe.gender === selectedGender;
+    selectedGender === "" ||
+    shoe.gender?.includes(selectedGender);
 
   return matchesSearch && matchesBrand && matchesGender;
 });
@@ -1256,10 +1380,12 @@ return (
             onChange={(e) => setSelectedGender(e.target.value)}
             className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
           >
-            <option>All</option>
-            <option>Men</option>
-            <option>Women</option>
-            <option>Unisex</option>
+            {/* Placeholder / Reset */}
+            <option value="">Gender</option>
+
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Unisex">Unisex</option>
           </select>
 
           {/* BRAND */}
@@ -1268,15 +1394,17 @@ return (
             onChange={(e) => setSelectedBrand(e.target.value)}
             className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
           >
-            <option>All</option>
-            <option>Nike</option>
-            <option>Adidas</option>
-            <option>Puma</option>
-            <option>New Balance</option>
-            <option>Converse</option>
-            <option>Asic</option>
-            <option>MK</option>
-            <option>Others</option>
+            {/* Placeholder / Reset */}
+            <option value="">Brand</option>
+
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Puma">Puma</option>
+            <option value="New Balance">New Balance</option>
+            <option value="Converse">Converse</option>
+            <option value="Asic">Asic</option>
+            <option value="MK">MK</option>
+            <option value="Others">Others</option>
           </select>
 
         </div>
@@ -1414,4 +1542,7 @@ Please share more details.`;
 
   </div>
 );
-};
+
+}
+
+export default App;
