@@ -1633,4 +1633,3 @@ Please share more details.`;
 
 }
 
-export default App;
