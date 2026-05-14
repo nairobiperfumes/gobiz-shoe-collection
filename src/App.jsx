@@ -1362,27 +1362,55 @@ export default function App() {
 
   ];
 
- const [search, setSearch] = useState("");
+
+  const [search, setSearch] = useState("");
 const [selectedBrand, setSelectedBrand] = useState("");
 const [selectedGender, setSelectedGender] = useState("");
 const [selectedImage, setSelectedImage] = useState(null);
 
+/* AUTO OPEN SHARED PRODUCT */
+useEffect(() => {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const productId = params.get("product");
+
+  if (productId) {
+
+    const element = document.getElementById(`product-${productId}`);
+
+    if (element) {
+
+      setTimeout(() => {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 500);
+
+    }
+  }
+
+}, []);
+
 const filteredShoes = shoes.filter((shoe) => {
+
   const matchesSearch = shoe.name
     .toLowerCase()
     .includes(search.toLowerCase());
 
-  // BRAND FILTER
+  /* BRAND FILTER */
   const matchesBrand =
     selectedBrand === "" ||
     shoe.brand === selectedBrand;
 
-  // GENDER FILTER
+  /* GENDER FILTER */
   const matchesGender =
     selectedGender === "" ||
     shoe.gender?.includes(selectedGender);
 
   return matchesSearch && matchesBrand && matchesGender;
+
 });
 
 return (
@@ -1468,12 +1496,14 @@ return (
             onChange={(e) => setSelectedGender(e.target.value)}
             className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
           >
-            {/* Placeholder / Reset */}
+
+            {/* RESET / PLACEHOLDER */}
             <option value="">Gender</option>
 
             <option value="Men">Men</option>
             <option value="Women">Women</option>
             <option value="Unisex">Unisex</option>
+
           </select>
 
           {/* BRAND */}
@@ -1482,7 +1512,8 @@ return (
             onChange={(e) => setSelectedBrand(e.target.value)}
             className="min-w-[140px] border border-gray-300 rounded-2xl px-5 py-3 bg-white"
           >
-            {/* Placeholder / Reset */}
+
+            {/* RESET / PLACEHOLDER */}
             <option value="">Brand</option>
 
             <option value="Nike">Nike</option>
@@ -1493,6 +1524,7 @@ return (
             <option value="Asic">Asic</option>
             <option value="MK">MK</option>
             <option value="Others">Others</option>
+
           </select>
 
         </div>
@@ -1534,7 +1566,9 @@ return (
 Please share more details.`;
 
           return (
+
             <div
+              id={`product-${shoe.id}`}
               key={shoe.id}
               className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
             >
@@ -1588,21 +1622,37 @@ Please share more details.`;
                   {/* SHARE BUTTON */}
                   <button
                     onClick={() => {
+
+                      /* PRODUCT SHARE LINK */
+                      const productUrl =
+                        `${window.location.origin}?product=${shoe.id}`;
+
                       const shareData = {
                         title: shoe.name,
-                        text: `Check out this shoe on GOBIZ:\n\n${shoe.name}\n${shoe.price}\n${shoe.availability}`,
-                        url: window.location.href,
+                        text: `Check out this shoe on GOBIZ:
+
+📦 ${shoe.name}
+💰 ${shoe.price}
+🏷️ ${shoe.brand}`,
+                        url: productUrl,
                       };
 
                       if (navigator.share) {
+
                         navigator.share(shareData);
+
                       } else {
+
                         navigator.clipboard.writeText(
-                          `${shoe.name}\n${shoe.price}\n${shoe.availability}\n${window.location.href}`
+`${shoe.name}
+${shoe.price}
+${productUrl}`
                         );
 
-                        alert("Product link copied to clipboard");
+                        alert("Product link copied");
+
                       }
+
                     }}
                     className="flex-1 border border-black text-black py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
                   >
@@ -1629,6 +1679,7 @@ Please share more details.`;
               </div>
 
             </div>
+
           );
         })}
 
@@ -1659,6 +1710,4 @@ Please share more details.`;
 
   </div>
 );
-
 }
-
