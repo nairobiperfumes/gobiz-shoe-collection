@@ -699,7 +699,7 @@ export default function App() {
   name: "Brogue 1/5",
   brand: "Brogue",
   gender: ["Unisex", "Men", "Women"],
-  price: "KSh 4,500",
+  price: "KSh 2,900",
   availability: "Available",
   image: "brogue-1-5.jpg",
   gallery: [ 
@@ -711,7 +711,7 @@ export default function App() {
   name: "Brogue 2/5",
   brand: "Brogue",
   gender: ["Unisex", "Men", "Women"],
-  price: "KSh 4,500",
+  price: "KSh 2,900",
   availability: "Available",
   image: "brogue-2-5.jpg",
   gallery: [ 
@@ -723,7 +723,7 @@ export default function App() {
   name: "Brogue 3/5",
   brand: "Brogue",
   gender: ["Unisex", "Men", "Women"],
-  price: "KSh 4,500",
+  price: "KSh 2,900",
   availability: "Available",
   image: "brogue-3-5.jpg",
   gallery: [ 
@@ -735,7 +735,7 @@ export default function App() {
   name: "Brogue 4/5",
   brand: "Brogue",
   gender: ["Unisex", "Men", "Women"],
-  price: "KSh 4,500",
+  price: "KSh 2,900",
   availability: "Available",
   image: "brogue-4-5.jpg",
   gallery: [ 
@@ -747,7 +747,7 @@ export default function App() {
   name: "Brogue 5/5",
   brand: "Brogue",
   gender: ["Unisex", "Men", "Women"],
-  price: "KSh 4,500",
+  price: "KSh 2,900",
   availability: "Available",
   image: "brogue-5-5.jpg",
   gallery: [ 
