@@ -27,7 +27,7 @@ export default function App() {
       name: "Jordan Retro",
       brand: "Jordan",
       gender: ["Unisex",  "Men",  "Women"],
-      price: "KSh 4,600",
+      price: "KSh 3,500",
       availability: "Limited Stock",
       image:
         "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop",
