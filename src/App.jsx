@@ -1582,20 +1582,49 @@ Please share more details.`;
 
                 </div>
 
-                {/* WHATSAPP BUTTON */}
-                <button
-                  onClick={() =>
-                    window.open(
-                      `https://wa.me/254741404204?text=${encodeURIComponent(
-                        whatsappMessage
-                      )}`,
-                      "_blank"
-                    )
-                  }
-                  className="w-full mt-6 bg-black text-white py-3 rounded-2xl font-semibold hover:bg-gray-800 transition"
-                >
-                  Order via WhatsApp
-                </button>
+                {/* SHARE + WHATSAPP BUTTONS */}
+                <div className="flex gap-3 mt-6">
+
+                  {/* SHARE BUTTON */}
+                  <button
+                    onClick={() => {
+                      const shareData = {
+                        title: shoe.name,
+                        text: `Check out this shoe on GOBIZ:\n\n${shoe.name}\n${shoe.price}\n${shoe.availability}`,
+                        url: window.location.href,
+                      };
+
+                      if (navigator.share) {
+                        navigator.share(shareData);
+                      } else {
+                        navigator.clipboard.writeText(
+                          `${shoe.name}\n${shoe.price}\n${shoe.availability}\n${window.location.href}`
+                        );
+
+                        alert("Product link copied to clipboard");
+                      }
+                    }}
+                    className="flex-1 border border-black text-black py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
+                  >
+                    Share
+                  </button>
+
+                  {/* WHATSAPP BUTTON */}
+                  <button
+                    onClick={() =>
+                      window.open(
+                        `https://wa.me/254741404204?text=${encodeURIComponent(
+                          whatsappMessage
+                        )}`,
+                        "_blank"
+                      )
+                    }
+                    className="flex-1 bg-black text-white py-3 rounded-2xl font-semibold hover:bg-gray-800 transition"
+                  >
+                    Order via WhatsApp
+                  </button>
+
+                </div>
 
               </div>
 
