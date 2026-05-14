@@ -10,7 +10,7 @@ export default function App() {
       price: "KSh 4,000",
       availability: "Available",
       image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
+        "Nike-Air-Max.jpg",
     },
     {
       id: 2,
